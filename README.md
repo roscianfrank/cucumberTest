@@ -1,2 +1,2 @@
 # Cucumber test with Junit 5
-## Runs tes in parallel
+## Runs test in parallel
