@@ -9,17 +9,19 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseClass {
     public static WebDriver driver = null;
+
     @Before
-    public static void setup(){
+    public static void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("--remote-allow-origins=*");
         options.setHeadless(false);
         driver = new ChromeDriver(options);
     }
 
     @After
-    public static void tearDown(){
+    public static void tearDown() {
         driver.quit();
     }
 }

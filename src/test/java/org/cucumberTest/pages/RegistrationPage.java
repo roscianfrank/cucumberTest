@@ -9,7 +9,7 @@ import java.time.Duration;
 
 import static org.cucumberTest.steps.BaseClass.driver;
 
-public class RegistrationPage extends CommanMethods{
+public class RegistrationPage extends CommanMethods {
     public RegistrationPage() {
         PageFactory.initElements(driver, this);
     }
@@ -32,7 +32,7 @@ public class RegistrationPage extends CommanMethods{
     @FindBy(css = "button[title='Create an Account'] span")
     private WebElement createAccountButton;
 
-    public final void CreateAnAccount(){
+    public final void CreateAnAccount() {
         Assertions.assertTrue(isElementVisible(firstName, Duration.ofSeconds(5)));
         firstName.sendKeys(faker.name().firstName());
         lastName.sendKeys(faker.name().lastName());

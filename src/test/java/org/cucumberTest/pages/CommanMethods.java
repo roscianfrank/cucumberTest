@@ -14,7 +14,8 @@ import static org.cucumberTest.steps.BaseClass.driver;
 
 public class CommanMethods {
     protected static Faker faker = new Faker(new Locale("en-GB"));
-    protected final void clickOnElement(WebElement element){
+
+    protected final void clickOnElement(WebElement element) {
         Assertions.assertTrue(isElementVisible(element, Duration.ofSeconds(5)));
         element.click();
     }
@@ -30,7 +31,7 @@ public class CommanMethods {
     }
 
     protected void scrollToElement(WebElement webElement) {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoViewIfNeeded()", webElement);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoViewIfNeeded()", webElement);
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
