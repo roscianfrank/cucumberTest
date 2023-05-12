@@ -9,6 +9,7 @@ import static org.cucumberTest.steps.BaseClass.driver;
 
 public class HomePagesSteps {
     Homepage homepage = new Homepage();
+
     @Given("I am on the Luma homepage")
     public void iAmOnTheHomepage() {
         driver.navigate().to("https://magento.softwaretestingboard.com/");
@@ -22,5 +23,10 @@ public class HomePagesSteps {
     @When("I click on sign-in link")
     public void iClickOnSigninLink() {
         homepage.clickOnSignInLink();
+    }
+
+    @Then("I check homepage layout")
+    public void iCheckHomepageLayout() {
+        homepage.checkHomePageLayout();
     }
 }
