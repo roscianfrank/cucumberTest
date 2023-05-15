@@ -1,13 +1,13 @@
 # Cucumber test with Junit 5
 ## Pre-requisites 
     
-  - Java 8 or above must be installed 
+  - Java 17 must be installed 
   - Maven must be installed
 
 ## How to Run test
  - Clone repo from Git
  - CD in to the repo 
- - run on you terminal `mvn -B clean test`
+ - run on you terminal mvn -B clean test
 
 ## CI
 You can check the CI status on below link
