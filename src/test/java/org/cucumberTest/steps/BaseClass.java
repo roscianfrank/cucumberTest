@@ -16,7 +16,6 @@ public class BaseClass {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("--remote-allow-origins=*");
-        options.setHeadless(false);
         driver = new ChromeDriver(options);
     }
 
