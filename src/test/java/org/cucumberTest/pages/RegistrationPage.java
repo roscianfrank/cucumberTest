@@ -9,7 +9,7 @@ import java.time.Duration;
 
 import static org.cucumberTest.steps.BaseClass.driver;
 
-public class RegistrationPage extends CommanMethods {
+public class RegistrationPage extends CommonMethods {
     public RegistrationPage() {
         PageFactory.initElements(driver, this);
     }

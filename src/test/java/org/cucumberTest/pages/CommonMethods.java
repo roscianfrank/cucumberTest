@@ -12,7 +12,7 @@ import java.util.Locale;
 
 import static org.cucumberTest.steps.BaseClass.driver;
 
-public class CommanMethods {
+public class CommonMethods {
     protected static Faker faker = new Faker(new Locale("en-GB"));
 
     protected final void clickOnElement(WebElement element) {
@@ -24,6 +24,7 @@ public class CommanMethods {
         try {
             WebDriverWait wait = new WebDriverWait(driver, timeOut);
             wait.until(ExpectedConditions.visibilityOf(webElement));
+            wait.until(ExpectedConditions.refreshed(ExpectedConditions.not(ExpectedConditions.stalenessOf(webElement))));
             return true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;

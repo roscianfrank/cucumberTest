@@ -5,11 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.cucumberTest.steps.BaseClass.driver;
 
-public class Homepage {
+public class Homepage extends CommonMethods{
     public Homepage() {
         PageFactory.initElements(driver, this);
     }
@@ -32,6 +33,7 @@ public class Homepage {
     }
 
     public final void checkHomePageLayout() {
+        Assertions.assertTrue(isElementVisible(promoImages.get(3), Duration.ofSeconds(15)));
         Assertions.assertEquals(6, promoImages.size(), "Promo images are missing");
         Assertions.assertEquals(6, promoImages.size(), "Products are missing from home page");
     }

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseClass {
     public static WebDriver driver = null;
 
@@ -18,10 +20,14 @@ public class BaseClass {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--headless=new");
         driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
     }
 
     @After
     public static void tearDown() {
-        driver.quit();
+        if (driver == null) {
+            driver.quit();
+        }
     }
 }
